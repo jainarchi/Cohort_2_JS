@@ -1,11 +1,70 @@
 
+function active (){
+  console.log('function statement');
+  
+}
 
+let v = function(){
+    console.log('function expression');
+}
+
+let func = () => { 
+    console.log('fat arrow function');
+}
+
+
+
+
+let multiply = ( a = 12, b = 1) => {         
+     console.log(a - b);
+     
+}
+multiply(23 , 56);
+
+
+
+
+function print ( a, b , c , ...val){   // rest operator
+    console.log( a, b , c , val);
+
+}
+
+function getScore(... score){
+      let sum = 0 ;
+
+    //   score.map(function(e){
+    //         sum += e ;
+    //   })
+
+      score.forEach(function(e){
+        sum += e ;
+      })
+
+      return sum ;
+}
+
+print(12 , 30 , 23 , 10 , 12 , 10 , 80 , 2);
+
+
+let total = getScore(12 , 30 , 23 , 10 , 12 , 10 , 80 , 2);
+console.log(total);
+
+
+
+
+
+
+
+
+/*
+
+//  first class function
 let abcd = function(val){
     val();
 }
 
 abcd(function(){
-    console.log('func passed in another func  - first class function . treated as variable');
+    console.log('func passed in another func  - first class function . treated as value');
     
 });
 
@@ -81,3 +140,6 @@ function a1(){
 }
 
 a1();
+
+
+*/
