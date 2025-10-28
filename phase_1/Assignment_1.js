@@ -55,6 +55,13 @@ console.log(x , y);
 let obj1 ={
     name: "harsh"
 }
+
+let obj2 = obj1 
+obj2.name = "archi jain";
+
+console.log(obj1);
+
+
  
 
 
