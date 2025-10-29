@@ -63,9 +63,7 @@ console.log(obj1);
 
 
 
-
 let arr = [10 , 30 , 40 , 50 , 89];
-
 arr[2] = 100 ;
 console.log(arr);
 
@@ -73,19 +71,42 @@ console.log(arr);
 let ar = arr.map(function(e) {
     return e * 2 ;
 })
-
-
 console.log(ar);
+
 
 
 let filterEle = arr.filter(function(e){
     return e > 50;
 }) 
-
 console.log(filterEle);
 
 
 
+let abc = [12 , 10 , 30 , 18 , 80];
+
+abc.forEach((e) => {
+   console.log(e + 5);
+})
+
+
+let isSome = abc.some(function (e){
+    return e > 70
+})
+console.log(isSome);
+
+
+
+let isEvery = abc.every(function (e){
+    return e > 12;
+})
+console.log(isEvery);
+
+
+let ans = abc.reduce(function(acc , val){
+    return acc + val;            
+}, 10)                         
+
+console.log(ans);
 
 
 
