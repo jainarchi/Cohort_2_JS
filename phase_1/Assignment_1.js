@@ -62,7 +62,31 @@ obj2.name = "archi jain";
 console.log(obj1);
 
 
- 
+
+
+let arr = [10 , 30 , 40 , 50 , 89];
+
+arr[2] = 100 ;
+console.log(arr);
+
+
+let ar = arr.map(function(e) {
+    return e * 2 ;
+})
+
+
+console.log(ar);
+
+
+let filterEle = arr.filter(function(e){
+    return e > 50;
+}) 
+
+console.log(filterEle);
+
+
+
+
 
 
 
