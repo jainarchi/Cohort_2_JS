@@ -84,6 +84,13 @@ console.log(filterEle);
 
 let abc = [12 , 10 , 30 , 18 , 80];
 
+let ans = abc.reduce(function(acc , val){
+    return acc + val;            
+}, 10)    
+console.log(ans);
+
+
+
 abc.forEach((e) => {
    console.log(e + 5);
 })
@@ -102,11 +109,30 @@ let isEvery = abc.every(function (e){
 console.log(isEvery);
 
 
-let ans = abc.reduce(function(acc , val){
-    return acc + val;            
-}, 10)                         
 
-console.log(ans);
+
+let users = [{
+    name : "priya",
+    age : 20,
+    location: "Bhopal",
+    degree : "MBA"
+},
+{
+    name : "archi",
+    age : 20,
+    location: "Bhopal",
+    degree : "B.Tech"
+}]
+
+
+console.log(users);
+
+let u = users.find(function(user){
+    return user.age === 20 ;
+})
+console.log(u);
+
+
 
 
 
