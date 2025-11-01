@@ -120,6 +120,7 @@ let u = {
     id : "9i89",
 
 }
+
 let unq = "id" ;
 console.log(u[unq]); // u.unq  wrong - it find unq key
 
@@ -134,3 +135,28 @@ let admin ={
     [property] : "op12",
 }
 console.log(admin);
+
+
+// utity methods 
+
+let A = {
+    title : "JS",
+    duration : "4 weeks"
+}
+
+// console.log(Object.entries(A));
+// console.log(Object.keys(A));
+// console.log(Object.values(A));
+
+for (const key in A) {
+    console.log( key +  " : " + A[key]);
+}
+
+
+// key can be boolean and number
+
+let o = {
+    true : "yes",
+    34 : "number"
+}
+console.log(o.true , o[34]);

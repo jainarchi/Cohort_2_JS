@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background: #292929;
+        }
+        form{
+            border: 1px solid burlywood ;
+            padding: 10px;
+            margin: 50px;
+            display: flex;
+            flex-direction:  column;
+            gap: 10px;
+            width: 400px;
+            align-self: center;
+
+        }
+        input , textarea{
+            background: transparent;
+             color: white;
+        }
+
+        #cardCont{
+            width: 90vw;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            background: rgb(65, 71, 77);
+        }
+
+        .card{
+            border: 2px solid rgb(250, 236, 209);
+            padding: 10px;
+            width: 300px;
+            color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+    </style>
+</head>
+<body>
+   
+
+    <form >
+        <input type="text" placeholder="name">
+        <input type="number" placeholder="age">
+        <input type="email" placeholder="email">
+        <textarea name="text" ></textarea>
+        <input type="submit">
+    </form> 
+
+    <div id="cardCont">
+    </div>
+
+    <script src="form1.js"></script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        body , html{
+            padding: 0;
+            margin: 0;
+        }
+        main{
+            height: 100vh;
+            width: 100vw;
+            background: #000;
+            
+            color: whitesmoke; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+         form{
+            background: #1a1919;
+            border: 1px solid blue;
+            padding: 20px  ;
+            width: 300px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+         }
+
+        input{
+            background: transparent;
+            padding:  6px;
+            border: 1px solid rgb(96, 112, 155);
+            border-radius: 4px;
+            color: whitesmoke;
+            
+        }
+
+       button{
+        color: white;
+        background: rgb(1, 1, 226);
+        border-radius: 4px;
+        padding: 8px  16px;
+        border: none;
+        cursor: pointer;
+       
+       }
+       button:hover{
+       background: rgb(2, 2, 173);
+       }
+       span{
+          font-size: larger;
+          margin: 10px auto;
+       }
+
+       #eyebtn{
+         color-scheme: dark;
+       }
+    </style>
+
+
+</head>
+<body>
+    <main>
+     <form >
+         <span>Sign Up</span>
+        <input type="text" placeholder="Username">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password" id="eyebtn">
+        <button type="submit" >Sign Up</button>
+    </form>
+
+
+
+    <script src="emailValidation.js"></script>
+    
+    </main>
+</body>
+</html>
