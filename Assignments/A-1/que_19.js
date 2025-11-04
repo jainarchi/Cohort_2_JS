@@ -12,11 +12,12 @@ function validAge(age) {
   }
 }
 
-let age = prompt('enter your age')
-validAge(age);
+// let age = prompt('enter your age')
+// validAge(age);
 
 let password = (function () {
   let p = null;
+  let again = 0 ;
 
   function set() {
     let pass = prompt("enter password to set");
@@ -40,6 +41,7 @@ let password = (function () {
   function update() {
     set();
   }
+  
 
   function login() {
     let open = confirm("Redirect to login.");
@@ -59,8 +61,16 @@ let password = (function () {
 
       if (enterpass === p) {
         console.log("successfully loged in");
+        return;
+
       } else{
         alert('Password is incorrect')
+        if(++again === 3){
+            alert('Account Locked , try after 10 min')
+            again = 0 ;
+            return;
+        }
+        login()
       }  
       } 
     }
@@ -79,3 +89,11 @@ password.set();
 // password.update()
 // password.show()
 password.login();
+
+
+
+// level - 2 
+// lock account if user enter incorrect password more than 2 times
+
+
+
