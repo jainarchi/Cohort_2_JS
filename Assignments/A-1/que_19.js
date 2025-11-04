@@ -84,16 +84,64 @@ let password = (function () {
   };
 })();
 
-password.set();
+// password.set();
 // password.show()
 // password.update()
 // password.show()
-password.login();
+// password.login();
 
 
 
 // level - 2 
 // lock account if user enter incorrect password more than 2 times
 
+let sum = 0 ;
+for(let  i = 1 ; i < 31 ; i++){
+    if( i % 2 !== 0) sum += i ;
+    
+}
+console.log(sum);
 
 
+
+
+let num  = null ;
+do{
+   num = prompt('enter num')
+   
+    if(num % 2 === 0){             // '4' % 2  = 0  
+        console.log(num);
+        break;
+    }
+
+}while(true)
+
+
+
+for(let j = 1 ; j < 6 ; j++){
+   
+    let inp = prompt('enter number');
+    if(inp > 0){
+        console.log(inp);
+    }
+}
+
+
+// ATM Simulator
+
+let amt = 1000 ;
+
+for( let i = 1 ; i < 4 ; i++){
+    let w_amt  = prompt('enter amt for withdraw')
+
+    if(w_amt > amt){
+        console.log('Insufficient Balance');   
+    }
+    else{
+        amt -= w_amt ;
+        console.log(`deducted , ${amt} available`);
+    }
+}
+
+
+    
