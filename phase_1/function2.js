@@ -6,8 +6,8 @@ function abc (a , b , c){           // required parameter - js set undefine   re
 abc()
 
 
-function fnc2( a = 10 , b = 20){
-    console.log(a + b );          
+function fnc2( a = 10 , b = 20){    // set def value 
+    console.log(a + b);             
 }
 fnc2();
 
@@ -28,9 +28,9 @@ fnc4(3 ,56, 8, 4, 3, 8)
 // function argument - Positional  spread  def
 
 function fnc5(a , b , c, d){
-    
 }
-fnc5(20 , 40 , null , 8) // positional arg
+fnc5(20 , 40 , null , 8)      // positional arg
+
 
 
 let ar = [1 , 4, 3 , 8]
@@ -49,9 +49,12 @@ function findMax(a , b , c){
 }
 let m = [67 , 46 , 32]
 
-console.log(findMax(...m));
+console.log(findMax(...m));           // spread arg
 
 
 
-
+function fnc7( a , b ){
+    console.log( a + b);   
+}
+fnc7(10 , 56)
 
