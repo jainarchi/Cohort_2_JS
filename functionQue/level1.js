@@ -73,7 +73,33 @@ for(let key in Obj){
     console.log(Obj[key]);
 }
 
+// practice que 
 
+
+function reactangleArea(l , b ){
+    console.log(l * b);
+}
+reactangleArea(3 , 7);
+
+function isEven(num){
+    return num % 2 == 0 ? 'even' : 'odd'
+}
+
+console.log(isEven(38));
+
+
+function StringLeng (s){
+    console.log(s.length);
+    
+}
+StringLeng('Hello')
+
+
+function firstChar(s){
+    console.log(s[0]);
+    
+}
+firstChar('hello')
 
 
 
