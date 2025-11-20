@@ -2,34 +2,44 @@ let btn = document.querySelector("button");
 let main = document.querySelector("main");
 
 
+// const TechStacks = [
+//     "MERN Stack",
+//     "MEAN Stack",
+//     "LAMP Stack",
+//     "Python Django",
+//     "Ruby on Rails",
+//     "Flutter Dart",
+//     "Serverless Stack",
+//     "Go / Gin",
+//     "DSA with Java", 
+//     "Java Full Stack" 
+// ];
+
+
 
 btn.addEventListener("click", function () {
-  let circle = document.createElement("div");
-  circle.classList.add("circle")
-  let d = Math.floor(Math.random() * 26) + 5;
-
-  
+  let box = document.createElement("div");
+ 
+  let side = Math.floor(Math.random() * 50) + 5;
   let o = Math.random();
+  let rotate = Math.random()*360;
 
-  circle.style.height = d +'vmin';
-  circle.style.width = d + 'vmin';
-  circle.style.opacity = o;
+
+  box.style.height = side + 'px';
+  box.style.width = side + 'px';
+  box.style.opacity = o + 0.3;
+  box.style.borderRadius = "4px"
+  box.style.transform = 'rotate(' + rotate + 'deg)';
+  box.style.position = "absolute";
+  box.style.background = `linear-gradient(45deg, red, pink  )`;
+
 
   let x = Math.floor(Math.random() * 100);
   let y = Math.floor(Math.random() * 100) ;
-  circle.style.top = y +"vh";
-  circle.style.left = x + "vw";
+  box.style.top = y +"vh";
+  box.style.left = x + "vw";
 
-
-  let r = Math.floor(Math.random() * 256);
-  let g = Math.floor(Math.random() * 256);
-  let b = Math.floor(Math.random() * 256);
-  
-  circle.style.border = '2px solid transparent'; 
-  circle.style.borderImageSlice = '1';        
-  circle.style.borderImageSource = `linear-gradient( rgb(${r}, ${g}, ${b}), white , rgb(${g}, ${b}, ${r}))`;
-
-  main.appendChild(circle);
-
+ 
+  main.appendChild(box);
 
 });

@@ -96,11 +96,28 @@ StringLeng('Hello')
 
 
 function firstChar(s){
-    console.log(s[0]);
-    
+    console.log(s.charAt(3));
 }
 firstChar('hello')
 
+
+
+function lastChar(s){
+    // return s.charAt(s.length - 1)
+    return s[s.length -1 ]
+    
+}
+console.log(lastChar('javascript'));
+
+
+// --------------------------------------------------- day - 30 
+
+
+let g = 0 ;
+function impure (){
+    g ++ ;
+}
+impure(g);
 
 
 
