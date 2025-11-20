@@ -24,7 +24,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
         }
 
         .card {
@@ -36,14 +35,15 @@
         }
 
         .imgCont {
-            width: 240px;
-            height: 280px;
+            width: 260px;
+            height: 290px;
             border-radius: 6px;
             position: relative;
+            overflow: hidden;
         }
 
         .card .imgCont #like {
-            font-size: 80px;
+            font-size: 90px;
             position: absolute;
             background: transparent;
             background: linear-gradient(to right bottom, rgb(189, 15, 140) 30%, red, rgb(255, 128, 162));
@@ -51,8 +51,8 @@
             -webkit-text-fill-color: transparent;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(1) rotate(-35deg);
-            transition: ease-in-out 0.2s;
+            transform: translate(-50%, -50%) scale(0) rotate(-60deg);
+            /* transition: cubic-bezier(1,1.84,.87,.82) 0.3s; */
             opacity: 0;
         }
 
