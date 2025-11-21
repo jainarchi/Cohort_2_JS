@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>download mp3</title>
+
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        main{
+            width: 100vw;
+            height: 100vh;
+            background: #260138;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .Cont{
+            background: rgb(32, 4, 31);
+            padding: 2rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 26px rgb(98, 0, 128);
+        }
+
+        .outer{
+            width:300px ;
+            height: 10px;
+            border-radius: 18px;
+            background: rgb(232, 231, 229);
+            /* position: relative; */
+            overflow: hidden;
+        }
+        .inner{
+            width: 0% ;
+            background: rgb(138, 18, 213);
+            height: 100%;
+            border-radius: 18px;
+        }
+
+        .dtl{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            font-size: 1rem;
+        }
+
+        .dtl button{
+            border: none;
+            background: rgb(244, 230, 255);
+            padding: 0.5rem;
+            border-radius: 0.3rem;
+            transition: all ease 0.3s;
+            cursor: pointer;
+           
+            
+        }
+        .dtl button:hover{
+            scale : 1.05;
+        } 
+
+        .cursor{
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            background: rgb(248, 210, 255);
+            position: absolute;
+            transition: ease-in-out ;
+            box-shadow: 0 0 10px rgb(248, 210, 255);
+            z-index: 9;
+        }
+
+        .blurCursor{
+            height: 100px;
+            width: 100px;
+            background: rgb(228, 2, 249);
+            border-radius: 50%;
+            filter: blur(50px);
+            position: absolute;
+            transition: all ease 0.1s;
+        }
+
+        span , button , .outer{
+            position: relative;
+            z-index: 9;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <main>
+
+        <div class="cursor"></div>
+        <div class="blurCursor"></div>
+        <div class="Cont">
+            
+            <div class="outer">
+                <div class="inner"></div>
+            </div>
+
+
+            <div class="dtl">
+                <span>song.mp3 </span>
+                <div id="progress"><span id="showPer">0</span>%</div>
+                <button>Download</button>
+            </div>
+        </div>
+    </main>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
