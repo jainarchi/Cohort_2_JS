@@ -1,0 +1,153 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+html , body{
+    height: 100%;
+    width: 100%;
+    background: #111;
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    max-width: 250px;
+    height: 86vh;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 0.5rem;
+    position: relative;
+    background: whitesmoke;
+    overflow-y: auto;
+    
+}
+main::-webkit-scrollbar{
+    display: none;
+}
+
+
+#stories{
+    width: 100%;
+    border-bottom: 1px solid #dadada;
+    padding: 4px;
+    padding-bottom: 0px;
+    white-space: nowrap;
+    overflow-x: auto ;
+}
+#stories::-webkit-scrollbar{
+    display: none;
+}
+
+.box{
+    display: inline-block;
+    margin-right: 5px;
+    /* border: 1px solid black; */
+    text-align: center;
+}
+.story{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 2px solid red;
+    background-position: center;
+    background-size: cover;
+}
+
+.name {
+    font-size: 0.6rem;
+    font-weight: 500;
+    font-family: system-ui, 'Helvetica Neue', sans-serif;
+}
+
+#showStory{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: none;
+    background-position: center;
+    background-size: cover;  
+}
+
+#showStory .dtl{
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  
+}
+
+.dtl #showStory-dp{
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+   
+}
+
+.dtl span{
+    font-size: 0.7rem;
+    
+}
+
+#hrAgo , .dayAgo{
+    color: rgb(65, 64, 64);
+    font-size: 0.7rem;
+   
+}
+
+
+/* feed */
+
+.post{
+    padding: 0.3rem;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+.post-dtl{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0.2rem 0;
+}
+
+
+.post-dp{
+    height: 24px;
+    width: 24px;
+    border: 1px solid red;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.post-dp .img{
+     height: 100%;
+     width: 100%;
+     object-fit: cover;
+     object-position: center;
+}
+
+.post-username{
+    font-size: 0.8rem;
+}
+
+
+.post .postImg{
+    border: 1px solid blue;
+    height: 200px;
+    border-radius: 4px;
+    background-position: center;
+    background-size: cover;
+}
+
+.post .feedback {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem 0;
+}
