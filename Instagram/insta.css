@@ -136,7 +136,7 @@ main::-webkit-scrollbar{
 }
 
 .post-username{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 
@@ -154,7 +154,10 @@ main::-webkit-scrollbar{
     justify-content: space-between;
     padding: 0.2rem 0;
 }
-
+.post .feedback .f1{
+    display: flex;
+    gap: 0.2rem;
+}
 
  .like-icon{ 
     position: absolute;
