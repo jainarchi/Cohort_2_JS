@@ -182,10 +182,6 @@ posts.forEach(function(p){
 }
 
 
-
-
-
-
 renderStories()
 showStoriesOnClick()
 
