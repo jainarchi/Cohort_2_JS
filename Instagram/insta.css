@@ -57,6 +57,7 @@ main::-webkit-scrollbar{
     border: 2px solid red;
     background-position: center;
     background-size: cover;
+    cursor: pointer;
 }
 
 .name {
@@ -147,6 +148,7 @@ main::-webkit-scrollbar{
     background-size: cover;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .post .feedback {

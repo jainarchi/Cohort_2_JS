@@ -112,10 +112,14 @@ function renderStories() {
   })
 }
 
+
+
 function showStoriesOnClick() {
 
   stories.addEventListener("click", (dets) => {
     let i = dets.target.id
+    
+    showStory.style.display = "block"
     showStory.style.backgroundImage = `url(${following[i].story})`
 
     showStoryDp.style.backgroundImage = `url(${following[i].dp})`
@@ -123,12 +127,12 @@ function showStoriesOnClick() {
     showhr.textContent = `${Math.floor(Math.random() * 25)+1}h`
 
 
-    showStory.style.display = "block"
 
     setTimeout(function () {
       showStory.style.display = "none"
+       dets.target.style.border = `2px solid #cbc9c9ff`
+    
     }, 1200)
-
 
   })
 }
