@@ -1,0 +1,50 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+#feed{
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box ;
+    background: #111;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+}
+
+#allReels{
+    width: 300px;
+    min-height: 100vh;
+    border: 1px solid #dadada ;
+    border-radius: 0.5rem;
+
+}
+
+.reel{
+    height: 500px;
+    width: 100%;
+    background: crimson;
+   
+}
+.reel .bottom{
+    border: 1px solid black;
+}
+
+.reel .bottom .user-info{
+    display: flex;
+    /* gap: 10px; */
+}
+
+.reel button{
+    background: transparent;
+    color: white;
+    border: 1px solid black;
+    border-radius: 1px ;
+    
+}
+.reel p{
+    font-size: 0.9rem;
+}
