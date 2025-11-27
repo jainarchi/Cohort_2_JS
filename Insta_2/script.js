@@ -137,7 +137,6 @@ reels.forEach((reel, idx) => {
 })
 
 
-
 reels.forEach((reel, idx) => {
   reel.addEventListener("dblclick" , (e) =>{
 
