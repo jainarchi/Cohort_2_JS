@@ -1,10 +1,19 @@
-body{
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+html , body{
+   height: 100%;
+   width: 100%;
+
+}
+
+i{
+    cursor: pointer;
+}
 
 #feed{
     height: 100vh;
@@ -19,9 +28,13 @@ body{
 #allReels{
     width: 300px;
     min-height: 100vh;
-    border: 1px solid #dadada ;
     border-radius: 0.5rem;
+    scroll-snap-type: Y mandatory;
+    overflow-y: auto;
     
+}
+#allReels::-webkit-scrollbar{
+    display: none;
 }
 
 .reel{
@@ -29,29 +42,47 @@ body{
     width: 100%;
     background: crimson;
     position: relative;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 
-}   
+
+} 
+#reel-vid{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-fit: center;
+}  
 .reel .bottom{
-    background: linear-gradient(transparent , rgba(0, 0, 0, 0.301));
-    padding: 0.4rem 0.8rem;
+    background: linear-gradient(transparent , rgba(0, 0, 0, 0.863));
+    padding: 0.8rem ;
     font-size: 0.8rem;
     position: absolute;
-    /* width: 100%; */
+    width: 100%;
     bottom: 0 ;
-    border: 1px solid blue;
+   
 }
 
 .reel .bottom div{
     display: flex;
     gap: 6px;
+    padding-bottom: 0.5rem;
+  
 }
   
 .reel button{
     background: transparent;
     color: white;
-    border: 1px solid rgba(0, 0, 0, 0.733);
+    border: 1px solid rgba(0, 0, 0, 0.564);
     border-radius: 1px ; 
     font-size: 0.7rem;   
+    font-weight: 600;
+    padding: 0 0.4rem;
+    
+}
+.reel .bottom span{
+   font-weight: 600;
+   font-size: 0.8rem;
 }
 .reel .bottom img{
     height: 20px;
@@ -64,19 +95,23 @@ body{
 .reel .right{
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    /* border: 1px solid black; */
+    /* background: #000; */
     position: absolute;
     bottom: 80px;
     right: 0;
-    padding: 8px;
     text-align: center;
 
+}
+.right div{
+    /* border: 1px solid red ; */
+    padding: 0.5rem;
+}
 
-}
-.reel .right i{
+.reel .right div i{
     display: block;
+    pointer-events: none;
 }
-.reel .right span{
+.reel .right div span{
     font-size: 0.7rem;
+    pointer-events: none;
 }

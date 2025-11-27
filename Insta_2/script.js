@@ -1,17 +1,17 @@
-let feedReels = [
+const feedReels = [
   {
-    img_url: "https://example.com/images/post1.jpg",
+    img_url: '../assets/waterfall.mp4',
     username: "traveler_joe",
     isFollowed: true,
     caption: "Sunrise over the mountains! Absolutely breathtaking. ⛰️",
-    isLiked: true,
+    isLiked: false,
     likeCount: 1950,
     commentCount: 85,
     shareCount: 20,
-    saveCount: 112,
+
   },
   {
-    img_url: "https://example.com/images/post2.png",
+    img_url: '../assets/coding.mp4',
     username: "coding_queen",
     isFollowed: false,
     caption:
@@ -20,32 +20,29 @@ let feedReels = [
     likeCount: 820,
     commentCount: 45,
     shareCount: 10,
-    saveCount: 60,
   },
+  // {
+  //   img_url: "https://www.pexels.com/download/video/34906437/",
+  //   username: "foodie_ella",
+  //   isFollowed: true,
+  //   caption: "Homemade pasta night! Nothing beats fresh ingredients. 🍝",
+  //   isLiked: false,
+  //   likeCount: 3300,
+  //   commentCount: 120,
+  //   shareCount: 35,
+  // },
   {
-    img_url: "https://example.com/images/post3.gif",
-    username: "foodie_ella",
-    isFollowed: true,
-    caption: "Homemade pasta night! Nothing beats fresh ingredients. 🍝",
-    isLiked: true,
-    likeCount: 3300,
-    commentCount: 120,
-    shareCount: 35,
-    saveCount: 450,
-  },
-  {
-    img_url: "https://example.com/images/post4.jpeg",
+    img_url: '../assets/pet.mp4',
     username: "pet_lover_sam",
     isFollowed: true,
     caption: "My dog Max enjoying his new toy! Look at that happy face! 🐕",
-    isLiked: true,
+    isLiked: false,
     likeCount: 1480,
     commentCount: 75,
     shareCount: 15,
-    saveCount: 90,
   },
   {
-    img_url: "https://example.com/images/post5.webp",
+    img_url: '../assets/coding.mp4',
     username: "design_master",
     isFollowed: false,
     caption: "Minimalist UI concept for a new mobile app. Thoughts? #uidesign",
@@ -53,51 +50,101 @@ let feedReels = [
     likeCount: 1050,
     commentCount: 95,
     shareCount: 25,
-    saveCount: 210,
+
   },
 ];
 
 let allReels = document.querySelector("#allReels");
 
-console.log(allReels);
 
-feedReels.forEach((r) => {
-  console.log(r.index);
+function addData() {
 
-  let reel = document.createElement("div");
-  reel.classList.add("reel");
+  let sum = "";
+  feedReels.forEach((r, idx) => {
 
-  reel.innerHTML = ` 
-                 
+    sum += `<div class="reel">
+                <video id="reel-vid" loop muted autoplay src=${r.img_url}></video>
                 <div class="bottom">
                     <div>
-                          <img src="" alt="">
-                          <span>${r.username}</span>
-                          <button>${
-                            r.isFollowed ? "Unfollow" : "Follow"
-                          }</button>
+                        <span>${r.username}</span>
+                        <button>${r.isFollowed ? "Unfollow" : "Follow"}</button>
                     </div>
                     <p>${r.caption ? r.caption : ""}</p>
                 </div>
                 <div class="right">
-                    <div>
+                    <div id=${idx} class='like'>
                         <i class="ri-heart-3-line"></i>
                         <span>${r.likeCount}</span>
                     </div>
-                     <div>
+                     <div >
                        <i class="ri-chat-1-line"></i>
                         <span>${r.commentCount}</span>
                     </div>
-                     <div>
+                     <div id=${idx} class='share'>
                        <i class="ri-send-plane-fill"></i>
                         <span>${r.shareCount}</span>
                     </div>
-                    <div>
-                        <i class="ri-bookmark-line"></i>
-                        <span>${r.saveCount}</span>
+                    <div >
+                        <i class="ri-bookmark-line"></i> 
                     </div>
                 </div>
+              </div> 
             `;
 
-  allReels.appendChild(reel);
-});
+  });
+
+
+  allReels.innerHTML = sum;
+
+}
+
+addData();
+let reels = document.querySelectorAll(".reel")
+
+
+
+
+
+
+reels.forEach((reel, idx) => {
+  reel.addEventListener("click", (e) => {
+
+     console.log(feedReels[e.target.id]);
+     
+    if(e.target.className === 'like'){
+       let reelObj = feedReels[e.target.id]
+
+      if(!reelObj.isLiked){
+        reelObj.likeCount++ 
+        reelObj.isLiked = true 
+      }
+      else {
+        reelObj.likeCount--;
+        reelObj.isLiked = false
+      }
+      addData()
+    }
+
+    if(e.target.className === 'share'){
+      console.log('sared');
+      
+        feedReels[e.target.id].shareCount++ ; 
+        addData()  
+    }
+
+  })
+
+})
+
+
+
+reels.forEach((reel, idx) => {
+  reel.addEventListener("dblclick" , (e) =>{
+
+    if(! feedReels[idx].isLiked){
+      feedReels[idx].likeCount++ 
+      feedReels[idx].isLiked = true
+      addData()
+    }
+  })
+})
