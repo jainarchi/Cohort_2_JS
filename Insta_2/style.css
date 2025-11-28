@@ -140,3 +140,12 @@ i{
     pointer-events: none;
 }
 
+.mute-btn{
+
+    position: absolute;
+    top: 0.8rem;
+    right : 0.5rem ;
+}
+.mute-btn i{
+    pointer-events:  none;
+}

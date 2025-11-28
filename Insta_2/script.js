@@ -1,9 +1,10 @@
 const feedReels = [
   {
-    img_url: '../assets/waterfall.mp4',
+    url: '../assets/nature_short.mp4',
+    isMuted : true,
     username: "traveler_joe",
     isFollowed: true,
-    caption: "Sunrise over the mountains! Absolutely breathtaking. ⛰️",
+    caption: "spending time in mountains! Absolutely breathtaking. ⛰️",
     isLiked: false,
     likeCount: 1950,
     commentCount: 85,
@@ -11,19 +12,21 @@ const feedReels = [
 
   },
   {
-    img_url: '../assets/coding.mp4',
+    url: '../assets/coding_shorts.mp4',
+    isMuted : true,
     username: "coding_queen",
     isFollowed: false,
     caption:
-      "Just finished debugging the latest feature! Time for coffee. ☕ #devlife",
+      "Just finished debugging the latest feature! #devlife",
     isLiked: false,
     likeCount: 820,
     commentCount: 45,
     shareCount: 10,
   },
   // {
-  //   img_url: "https://www.pexels.com/download/video/34906437/",
+  //   url: "https://www.pexels.com/download/video/34906437/",
   //   username: "foodie_ella",
+  // isMuted : true,
   //   isFollowed: true,
   //   caption: "Homemade pasta night! Nothing beats fresh ingredients. 🍝",
   //   isLiked: false,
@@ -32,7 +35,8 @@ const feedReels = [
   //   shareCount: 35,
   // },
   {
-    img_url: '../assets/pet.mp4',
+    url: '../assets/pet.mp4',
+    isMuted : true,
     username: "pet_lover_sam",
     isFollowed: true,
     caption: "My dog Max enjoying his new toy! Look at that happy face! 🐕",
@@ -42,10 +46,11 @@ const feedReels = [
     shareCount: 15,
   },
   {
-    img_url: '../assets/coding.mp4',
-    username: "design_master",
+    url: '../assets/coffee_short.mp4',
+    isMuted : true,
+    username: "food_master",
     isFollowed: false,
-    caption: "Minimalist UI concept for a new mobile app. Thoughts? #uidesign",
+    caption: "Fueling my day one sip at a time! ☕😴",
     isLiked: false,
     likeCount: 1050,
     commentCount: 95,
@@ -64,7 +69,14 @@ function addData() {
 
     sum += `<div class="reel">
 
-                <video id=${idx} class="reel-vid" loop muted autoplay src=${r.img_url}></video>
+                <video id=${idx} class="reel-vid" loop autoplay ${r.isMuted ? 'muted' : ''} src=${r.url}></video>
+
+                <div class ='mute-btn' id=${idx} >    
+                
+                 ${r.isMuted ? ' <i class= "ri-volume-mute-line"></i>' : '<i class= "ri-volume-up-line" ></i>' }
+                  
+                </div>         
+
                 <div class="bottom">
                     <div>
                         <span>${r.username}</span>
@@ -133,6 +145,16 @@ addData();
        addData()
     }
 
+    if(e.target.className === 'mute-btn'){
+    
+      
+       feedReels[e.target.id].isMuted = !feedReels[e.target.id].isMuted
+         console.log(feedReels[e.target.id]);
+
+      // addData();  not rerender because broweser will created all new video tag , and pause the vid with sound 
+      
+    }
+
   })
 
 
@@ -147,13 +169,13 @@ allReels.addEventListener("dblclick" , (e) =>{
      addData()
    }
 
-     let likeIcon = document.getElementById("like-effect")
-     likeIcon.style.opacity = 1
-     likeIcon.style.transform = 'translate(-50% , -50%) scale(1)';
+    let likeIcon = document.getElementById("like-effect")
+    likeIcon.style.opacity = 1
+    likeIcon.style.transform = 'translate(-50% , -50%) scale(1)';
 
     setTimeout(() => {
-        likeIcon.style.opacity = 0
-        likeIcon.style.transform = 'translate(-50% , -50%) scale(0.3)'
+      likeIcon.style.opacity = 0
+      likeIcon.style.transform = 'translate(-50% , -50%) scale(0.3)'
 
     }, 800);
   
