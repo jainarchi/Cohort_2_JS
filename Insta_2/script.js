@@ -63,17 +63,18 @@ function addData() {
   feedReels.forEach((r, idx) => {
 
     sum += `<div class="reel">
-                <video id="reel-vid" loop muted autoplay src=${r.img_url}></video>
+
+                <video id=${idx} class="reel-vid" loop muted autoplay src=${r.img_url}></video>
                 <div class="bottom">
                     <div>
                         <span>${r.username}</span>
-                        <button>${r.isFollowed ? "Unfollow" : "Follow"}</button>
+                        <button id=${idx} class='follow-btn'>${r.isFollowed ? "Unfollow" : "Follow" }</button>
                     </div>
                     <p>${r.caption ? r.caption : ""}</p>
                 </div>
                 <div class="right">
                     <div id=${idx} class='like'>
-                        <i class="ri-heart-3-line"></i>
+                        <i class=${r.isLiked ? 'ri-heart-3-fill': 'ri-heart-3-line'}></i>
                         <span>${r.likeCount}</span>
                     </div>
                      <div >
@@ -85,9 +86,12 @@ function addData() {
                         <span>${r.shareCount}</span>
                     </div>
                     <div >
-                        <i class="ri-bookmark-line"></i> 
+                       
                     </div>
                 </div>
+
+
+                <i id='like-effect' class="ri-heart-3-fill"></i>
               </div> 
             `;
 
@@ -95,21 +99,15 @@ function addData() {
 
 
   allReels.innerHTML = sum;
-
 }
 
 addData();
-let reels = document.querySelectorAll(".reel")
 
 
 
+  allReels.addEventListener("click", (e) => {
 
-
-
-reels.forEach((reel, idx) => {
-  reel.addEventListener("click", (e) => {
-
-     console.log(feedReels[e.target.id]);
+    //  console.log(feedReels[e.target.id]);
      
     if(e.target.className === 'like'){
        let reelObj = feedReels[e.target.id]
@@ -126,24 +124,41 @@ reels.forEach((reel, idx) => {
     }
 
     if(e.target.className === 'share'){
-      console.log('sared');
-      
         feedReels[e.target.id].shareCount++ ; 
         addData()  
     }
 
-  })
-
-})
-
-
-reels.forEach((reel, idx) => {
-  reel.addEventListener("dblclick" , (e) =>{
-
-    if(! feedReels[idx].isLiked){
-      feedReels[idx].likeCount++ 
-      feedReels[idx].isLiked = true
-      addData()
+    if(e.target.className === 'follow-btn'){ 
+       feedReels[e.target.id].isFollowed = !feedReels[e.target.id].isFollowed ;
+       addData()
     }
+
   })
+
+
+
+allReels.addEventListener("dblclick" , (e) =>{
+
+   if(e.target.className === 'reel-vid'){
+    
+    if(!feedReels[e.target.id].isLiked ) {
+     feedReels[e.target.id].likeCount++ ;
+     feedReels[e.target.id].isLiked = true 
+     addData()
+   }
+
+     let likeIcon = document.getElementById("like-effect")
+     likeIcon.style.opacity = 1
+     likeIcon.style.transform = 'translate(-50% , -50%) scale(1)';
+
+    setTimeout(() => {
+        likeIcon.style.opacity = 0
+        likeIcon.style.transform = 'translate(-50% , -50%) scale(0.3)'
+
+    }, 800);
+  
+  }
 })
+
+
+
