@@ -30,7 +30,7 @@ function revealText( para ) {
         })
         .join("");
 
-      iteration += 0.45;
+      iteration += 0.25;
       para.innerHTML = str;
     //   console.log(str);
 
@@ -43,7 +43,7 @@ function revealText( para ) {
 
 
 
-    }, 30);
+    }, 10);
 
 
   });

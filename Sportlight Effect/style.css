@@ -29,7 +29,7 @@ html{
  #page1 div {
     height: 100%;
     width: 100%;
-    background: radial-gradient(150px at var(--x) var(--y) ,rgba(255, 255, 255, 0), rgba(32, 32, 32, 0.667));
+    background: radial-gradient(150px at var(--x) var(--y) ,rgba(255, 255, 255, 0.114), rgba(32, 32, 32, 0.806));
 }
 
 
@@ -65,12 +65,12 @@ html{
   
     
 }
-/* 
+
 #page2 div{
     height: 100%;
     width: 100%;
     position: absolute;
-    background: radial-gradient(160px at var(--x) var(--y),rgba(14, 219, 72, 0.196) , rgb(24, 24, 24));
+    background: radial-gradient(170px at var(--x) var(--y),rgba(14, 219, 72, 0.196) , rgb(24, 24, 24));
     pointer-events: none;
  
-} */
+}
