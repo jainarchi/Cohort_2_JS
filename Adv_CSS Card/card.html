@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance CSS Card</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #111;
+        }
+
+        .box img {
+            width: 80%;
+            margin: auto;
+        }
+
+        .box p {
+            font-size: 0.9rem;
+        }
+
+        h2,
+        p {
+            text-shadow: 4px 4px 10px rgb(67, 1, 247);
+        }
+
+        .box {
+            cursor: pointer;
+            max-width: 300px;
+            color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+            padding-inline: 14px;
+            padding-bottom: 10px;
+            background:
+                linear-gradient(rgb(32, 29, 29)) padding-box;
+            /* conic-gradient( from var(--rotate) ,rgb(0, 0, 0) , rgb(255, 58, 127) , rgb(11, 11, 11))  border-box ; */
+            border: 4px solid rgba(0, 0, 0, 0);
+            border-radius: 8px;
+
+            animation: rotateAnimation 3s linear infinite;
+            animation-play-state: paused;
+            transition: all 0.2s;
+
+        }
+
+        .box:hover {
+            background:
+                linear-gradient(rgb(32, 29, 29)) padding-box,
+                conic-gradient(from var(--rotate), rgb(0, 0, 0), rgb(0, 8, 255), rgb(11, 11, 11)) border-box;
+            box-shadow: 0 0 62px rgb(27, 160, 255);
+            animation-play-state: running;
+        }
+
+        .box:hover h2,
+        .box:hover p {
+            color: rgb(208, 246, 255);
+        }
+
+
+
+        @property --rotate {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        @keyframes rotateAnimation {
+            from {
+                --rotate: 0deg;
+            }
+
+            to {
+                --rotate: 360deg;
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+
+    
+    <div class="box">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&auto=format&fit=crop&q=60" alt="Girl Portrait">
+
+        <h2>Neon Alita</h2>
+
+        <p>Digital creative and UI designer. Crafting beautiful experiences with code and light.</p>
+    </div>
+
+
+</body>
+</html>
