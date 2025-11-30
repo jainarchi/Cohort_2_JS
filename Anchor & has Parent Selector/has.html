@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>has - Parent Selector</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html , body{
+            height: 100%;
+            width: 100%;
+        }
+        html{
+            background: #111;
+            color: white;
+        }
+        #boxes{
+            display: flex;
+            gap: 1rem;
+            border: 1px solid whitesmoke;
+            padding: 0.5rem;
+            width: fit-content;
+        }
+        span{
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+        }
+        .red{
+            background: red;
+        }
+        .violet{
+            background: violet;
+        }
+        .blue{
+            background: blue;
+        }
+        .pink{
+            background: pink;
+        }
+
+        #boxes:has(.red){
+            background: rgb(78, 75, 75)
+        }
+
+        .cards{
+            width: fit-content;
+            margin: auto;
+            margin: auto;
+            display: flex;
+            gap: 1rem;
+            
+        }
+        .card {
+            height: 200px;
+            width: 200px;
+            transition: all 0.4s ;
+        }
+       
+        .cards:has(.card:hover) .card:not(:hover){
+            scale: 0.8;
+            opacity: 0.8;
+            filter: blur(0);
+        }
+        .card:hover{
+            scale: 1.2 ;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div id="boxes">
+        <span class="red"></span>
+        <span class="blue"></span>
+        <span class="blue"></span>
+    </div>
+    <div id="boxes">
+        <span class="violet"></span>
+        <span class="red"></span>
+        <span class="violet"></span>
+    </div>
+    <div id="boxes">
+        <span class="pink"></span>
+        <span class="pink"></span>
+        <span class="blue"></span>
+    </div>
+
+   
+    <div class="cards">
+        <div class="card red" ></div>
+       <div class="card pink"></div>
+        <div class="card violet"></div>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

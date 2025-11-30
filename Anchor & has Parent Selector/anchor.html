@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        
+    }
+
+    html , body{
+        height: 100%;
+        width: 100%;
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #111;
+        color: whitesmoke;
+        font-family: cursive;
+        anchor-name: --some-anchor;
+    }
+
+    .box {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+    }
+
+    .box:hover{
+       anchor-name: --some-anchor;
+    }
+    
+
+    #postionEle{
+        mix-blend-mode: difference;
+        background: whitesmoke;
+        border-radius: 10px;
+        pointer-events: none;
+        position: absolute;
+        position-anchor: --some-anchor;
+       
+        top: anchor(top);
+        left : anchor(left);
+        right : anchor(right);
+        bottom: anchor(bottom);
+
+        transition: all 0.4s linear;
+
+    }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="box" id="home">Home</div>
+    <div class="box">About Us</div>
+    <div class="box">More</div>
+    <div class="box">Ship</div>
+
+
+    <div id="postionEle"></div>
+    
+
+
+
+
+</body>
+</html>
