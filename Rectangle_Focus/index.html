@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;margin: 0;
+            box-sizing: border-box;
+        }
+        html , body{
+            height: 100%;
+            width: 100%;
+        }
+    :root{
+        --top: 200px;
+        --left : 400px ;
+    }
+main {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: black; 
+}
+
+
+#backImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: blur(10px); 
+    transform: scale(1.1); /* Edges white na dikhein */
+}
+
+#rect {
+    position: absolute;
+    top:var(--top);
+    left: var(--left);
+    transform: translate(-50%, -50%); 
+
+    width: 150px; 
+    height: 220px; 
+
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+    border: 1px solid rgba(255,255,255,0.3); 
+    z-index: 10;
+}
+
+#upperImg {
+    position: absolute;
+    width: 100vw;  
+    height: 100vh; 
+    
+   top:var(--top);
+   left: var(--left);
+    transform: translate(-50%, -50%);
+    
+    object-fit: cover;
+}
+      
+    </style>
+</head>
+<body>
+    
+    <main>
+        <img id="backImg" src="https://i.pinimg.com/1200x/a6/c7/7a/a6c77ac11de8d2dc7b2f7e7bb28fbc69.jpg" alt="">
+
+        
+<div id="rect">
+     <img id="upperImg" src="https://i.pinimg.com/1200x/a6/c7/7a/a6c77ac11de8d2dc7b2f7e7bb28fbc69.jpg" alt="">
+</div>
+        
+    </main>
+
+
+   
+</body>
+</html>
