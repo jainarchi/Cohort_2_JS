@@ -2,9 +2,7 @@
 //  inheritance  , getter & setter
 
 
-
 // let s1 = new Student();  
-
 
 let Student = class {
     constructor (){
@@ -32,3 +30,6 @@ class  User {
 let u1 = new User('Archi')
 u1.name =  u1.name + ' jain'
 console.log(u1.name );
+
+// u.name - call get 
+// u.name = call set 

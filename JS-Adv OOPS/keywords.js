@@ -19,12 +19,12 @@ let user = {
 }
 
 
-// fun.call(user , 90 , 'w');
+fun.call(user , 90 , 'w');
 
-// let newFun = fun.bind(user , 45 , 80);
-// newFun();
+let newFun = fun.bind(user , 45 , 80);
+newFun();
 
-// fun.apply(user , [ 23 , 'A'])       
+fun.apply(user , [ 23 , 'A'])       
 
 //-------------------------------------------------
 
