@@ -1,3 +1,4 @@
-'A')()
 
-// print.apply(obj , [89 , 90])
+
+// v1.details()
+// v2.details()

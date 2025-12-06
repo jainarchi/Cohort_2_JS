@@ -1,3 +1,4 @@
+
 class Users {
     constructor(name, email) {
         this.name = name;
@@ -249,6 +250,9 @@ C1.deposit(3000)
 C1.withdrawal(1000)
 
 
+
+
+
 //----------   ***********   --------
 
 // SECTION 4: Understanding this (Very Important)
@@ -285,3 +289,94 @@ showName.apply(profile)
 
 let show_P = profile.printName.bind(profile)
 show_P()
+
+
+
+
+
+// SECTION 5: Constructor Function and Prototype
+// 		Create a constructor function called Vehicle that accepts type and wheels.
+// 		Add a method describe inside the constructor and observe memory behavior when multiple objects are created.
+// 		Move the same method to Vehicle.prototype and repeat the test.
+// 		Explain why the prototype approach is preferred -> prevent memory wastage 
+
+
+
+function Vehicle(type, wheels) {
+    this.type = type;
+    this.wheels = wheels;
+}
+
+Vehicle.prototype.details = function () {
+    console.log(this.type, this.wheels);
+
+}
+
+let v1 = new Vehicle('car', 4)
+let v2 = new Vehicle('Activa', 2)
+
+
+console.log(v1.details === v2.details);
+v1.details()
+v2.details()
+
+// ------------------------
+
+function showBrand (){
+    console.log(this.brand);
+    
+}
+
+let gift  = {
+    brand : 'Archie'
+}
+let obj2 = {
+    brand : 'abcd' 
+}
+
+
+showBrand.call(gift)
+showBrand.call(obj2)
+
+
+
+// Create a function introduce that accepts two arguments: city and role, and prints name, city, and role using this.name.
+// 	24.	Create an object with a name property.
+// 	25.	Use apply to call introduce using the object and an array of arguments.
+// 	26.	Explain in simple words how apply differs from call.
+
+// -  apply accept max 2 parameter (this's val , array)
+// use call when u know arg
+// use apply when u have a list of data (eg array )
+
+
+function introduce (city  , role){
+    console.log(this.name ,  role , city );
+
+}
+
+let emp = {
+    name : 'archi',
+}
+
+introduce.apply(emp , ['Noida' , 'Software Engineer'])
+
+
+
+// Create a function greet that prints “Hello” followed by this.name.
+// 	28.	Bind this function to an object and store the returned function in a variable.
+// 	29.	Call the bound function later and observe the output.
+// 	30.	Explain why bind is useful when functions are executed later or inside callbacks
+
+// - it keeps connection alive with that object. no matter from where the func called .
+// bind execute at runtime 
+
+let retFun = greet.bind(emp)
+retFun()
+
+
+function greet (){                    // js read at compile time 
+    console.log('Hello' , this.name);
+    
+}
+
