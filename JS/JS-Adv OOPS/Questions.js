@@ -108,6 +108,9 @@ print.call(user1 , 'j' , 80)
 
 
 //Borrow a method from one object and run it for another object using call.
+
+
+
 let  teacher ={
     name : 'Primila Mahi',
     subject : 'Science',
@@ -341,9 +344,9 @@ showBrand.call(obj2)
 
 
 // Create a function introduce that accepts two arguments: city and role, and prints name, city, and role using this.name.
-// 	24.	Create an object with a name property.
-// 	25.	Use apply to call introduce using the object and an array of arguments.
-// 	26.	Explain in simple words how apply differs from call.
+// 		Create an object with a name property.
+// 		Use apply to call introduce using the object and an array of arguments.
+// 		Explain in simple words how apply differs from call.
 
 // -  apply accept max 2 parameter (this's val , array)
 // use call when u know arg

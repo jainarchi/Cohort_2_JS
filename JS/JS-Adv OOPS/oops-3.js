@@ -32,4 +32,4 @@ u1.name =  u1.name + ' jain'
 console.log(u1.name );
 
 // u.name - call get 
-// u.name = call set 
+// u.name - call set 
