@@ -42,13 +42,7 @@ u1.write();
 
 
 
-
-
-
-
-
-
-// inheritance - class -> class          extends class do share same reference 
+// classical  inheritance - class -> class          extends class do share same reference 
 //prototypal inheritance -   object -> object       
 
 
