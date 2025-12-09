@@ -25,7 +25,6 @@ checkLoginedIn('archi2398', function (isloggedIn) {
             givePost(prof.id, function (posts) {
                 console.log(posts[2]);
 
-
             })
 
         })
@@ -43,3 +42,20 @@ checkLoginedIn('archi2398', function (isloggedIn) {
 // making the code difficult to read, debug, and maintain 
 
 // solution - promises 
+
+
+function func1(fn2){
+    fn2(function(func5){
+        func5(function(){
+
+        })
+    })
+}
+
+
+func1(function(func4){
+         func4(function(func6){
+            func6()
+
+         })
+})

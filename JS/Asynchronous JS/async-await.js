@@ -1,4 +1,3 @@
-
 // fetch is promise based 
 
 async function abcd (){
