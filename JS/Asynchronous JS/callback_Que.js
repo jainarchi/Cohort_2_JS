@@ -12,7 +12,6 @@
 // **Use case:**
 // > “2 second baad ek kaam karna hai”
 
-// **Goal:**
 // - Samajhna ki callback delay ke baad kaise execute hota hai
 // - Ye `setTimeout` + callback connection hai
 
