@@ -7,7 +7,6 @@ async function getWheather(city) {
     try {
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
 
-
         let row = await fetch(url)
         if(! row.ok){
             throw Error('City not found')
@@ -22,11 +21,8 @@ async function getWheather(city) {
     catch(err){
         console.log('Invlaid city, Try again');
         console.log(err.message)
-    }
-   
+    }   
 }
-
-
 
 getWheather('bhopal')
 

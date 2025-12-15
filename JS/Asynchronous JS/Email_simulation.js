@@ -5,7 +5,6 @@ users = [
     'siya@mail.com'
 ]
 
-
 function sendMail(mail) {
 
     return new Promise((res, rej) => {
@@ -21,29 +20,26 @@ function sendMail(mail) {
         }, r * 1000)
 
     })
-
 }
-
 
 async function sendMails(users) {
 
     let mailState = users.map(async (mail) => {
-
         try {
             return await sendMail(mail)
         }
         catch (err) {
             return err
         }
-
     })
 
     return await Promise.all(mailState)
 
 }
 
-(async () => {
 
+
+(async () => {
     const finalResults = await sendMails(users);
     console.log(finalResults);
 
