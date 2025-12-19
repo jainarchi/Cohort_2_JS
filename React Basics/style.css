@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body , html{
+    background: #111;
+    color: rgb(233, 87, 87);
+}
+
+
+#circle{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background: rgb(242, 194, 194);
+}
+
+
+#box{
+    height: 300px;
+    width: 300px;
+    background: lightcyan;
+
+}
