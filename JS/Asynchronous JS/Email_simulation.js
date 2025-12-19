@@ -23,7 +23,6 @@ function sendMail(mail) {
 }
 
 async function sendMails(users) {
-
     let mailState = users.map(async (mail) => {
         try {
             return await sendMail(mail)
@@ -34,9 +33,7 @@ async function sendMails(users) {
     })
 
     return await Promise.all(mailState)
-
 }
-
 
 
 (async () => {
@@ -44,6 +41,7 @@ async function sendMails(users) {
     console.log(finalResults);
 
 })();
+
 
 
 // if promise rej but we handle it - that's why these all are resolve.
