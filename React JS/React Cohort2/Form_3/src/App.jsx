@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../components/Card";
 
 const App = () => {
-  const [profile, setProfile] = useState([]);
+  const [profile, setProfile] = useState(() =>{
+    const stored = localStorage.getItem("allProfile")
+    return stored ? JSON.parse(stored) : []
+  });
   const [form, setForm] = useState({
     username: "",
     role: "",
@@ -13,59 +16,57 @@ const App = () => {
 
 
 
+  useEffect(() =>{
+    localStorage.setItem("allProfile" , JSON.stringify(profile))
+  }, [profile])
+  
+ 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleDelete = (idx) => {
-    // const arr = [...profile]
-
-    // arr.splice(idx , 1)
-
-    // setProfile(arr)
-
-    setProfile(profile.filter((obj, i) => i != idx));
-  };
-
+  
+  const handleDelete =(idx) =>{
+    setProfile(profile.filter((p , i) => i != idx ))
+  }
+  
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if(btn == "Update"){
-      setProfile(profile.map((p , i) => {
-       return i == index ? {...form} : p 
-      }))
-       
+      setProfile( profile.map((p , i) => i == index ? {...form} : p ))
+      setBtn("Create")
+      setIndex(null)
     }
 
     else{
-     setProfile([
+      setProfile([
       ...profile,
       {
         username: form.username,
         role: form.role,
         about: form.about,
       },
-      ]);
-
+    ])
     }
-    
-    form.username = ''
-    form.role =''
-    form.about =''
-    
+
+    setForm({
+      username: '',
+      role:'',
+      about:''
+    })
   };
 
 
+
   const handleEdit = (idx) =>{
-    const arr = [...profile]
-    const p = arr.splice(idx , 1)
-    
-    setForm({...form  , ...p[0]})
+    setForm({...form , ...[...profile][idx] })
     setBtn("Update")
     setIndex(idx)
   }
+
 
   return (
     <>
@@ -97,8 +98,11 @@ const App = () => {
       </form>
 
       <div className="profiles">
-        <Card profile={profile} handleDelete={handleDelete} handleEdit={handleEdit} />
-        
+        <Card
+          profile={profile}
+          handleDelete={handleDelete}
+          handleEdit={handleEdit}
+        />
       </div>
     </>
   );

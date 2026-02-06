@@ -5,7 +5,7 @@ const Card = ({profile , handleDelete , handleEdit}) => {
     <>
         {profile.map((profile , idx) => {
         return (
-          <div className="profile">
+          <div className="profile" key={idx}>
             <h3>{profile.username}</h3>
             <h3>{profile.role}</h3>
             <p>{profile.about}</p>
