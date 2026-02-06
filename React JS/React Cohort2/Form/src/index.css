@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html , body{
+    height: 100%;
+    width: 100%;
+    font-family: system-ui, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    background: linear-gradient( to left top , rgb(211, 255, 235) , rgb(239, 211, 255) , white);
+}
+
