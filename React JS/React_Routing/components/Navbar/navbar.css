@@ -1,0 +1,23 @@
+.navbar {
+  background: #462727;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.navbar input {
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+}
+.navbar div {
+  display: flex;
+  gap: 1.5rem;
+}
+.navbar a {
+  color: rgb(241, 241, 241);
+  text-decoration: none;
+  font-size: 1.1rem;
+}/*# sourceMappingURL=navbar.css.map */
