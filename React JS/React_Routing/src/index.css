@@ -11,4 +11,6 @@ html , body{
   font-family: system-ui, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-
+body{
+  color: black;
+}
