@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="navbar">
-     <h3>Collections</h3>
+     <h3>Trendora</h3>
 
      <div>
       <input type="text" placeholder="Search" />
@@ -14,8 +14,7 @@ const Navbar = () => {
 
       <Link to="/men">Men</Link>
       <Link to="/women">Women</Link>
-      <Link to="#">Kid</Link>
-      <Link to="#">All Collections</Link>
+      <Link to="/kid">Kid</Link>
       <Link to="#">Sale</Link>
 
       </div>
