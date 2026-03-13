@@ -110,9 +110,7 @@ function reducer(state, action) {
 
 Reducers take:
 
-current state  
-+ action  
-= new state  
+current state  + action  = new state  
 
 ---
 
